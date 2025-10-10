@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 4</title>
+
+    <style>
+        .tabelaChurasco{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        .tabelaChurasco tr{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        .tabelaChurasco td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <div class="voltar">
+        <a href="./index.html"><img src="./img/voltar_invertido.jpg" alt="Voltar" width="40px"></a>
+    </div>
+    <h1>Formulários</h1>
+    <p>O HTML possui uma tag form que possibilita submissão de dados informados dentro do formulário.
+        a tag &lt;form> possui além dos atributos globais e também atributo action="url",
+        utilizado para definir o destino dos dados submetidos.        
+    </p>
+    <span>Exemplo:</span>
+    <pre>
+        &lt;form action="">
+            &lt;input type="text" name="" id="">
+            ...
+        &lt;/form>
+    </pre>
+    
+    <h1>Table</h1>
+    <p>A tag table é utilizada para identificação de tabela no HTML, independentemente em uma tabela podemos criar linhas <strong>(rows)</strong>
+       utilizando a tag &lt;tr> e celulas dentro das linhas utilizando a tag &lt;td>
+    </p>
+    <span>Exemplo:</span>
+    <pre>
+        &lt;table>
+            &lt;tr>
+                &lt;td>Celula 1x1&lt;/td>
+                &lt;td>Celula 1x2&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;td>Celula 2x1&lt;/td>
+                &lt;td>Celula 2x2&lt;/td>
+            &lt;/tr>
+        &lt;/table>
+    </pre>
+    <span>O código anterior define a tabela abaixo</span>
+    <br><br>
+    <table>
+        <tr>
+            <td>Celula 1x1</td>
+            <td>Celula 1x2</td>
+        </tr>
+        <tr>
+            <td>Celula 2x1</td>
+            <td>Celula 2x2</td>
+        </tr>
+    </table>
+    <p>Alem</p>
+
+    <span>Outro exemplo:</span>
+    <table class="tabelaChurasco">
+        <tr>
+            <td></td>
+            <td>Item</td>
+            <td colspan="2">Item churrasco</td>
+            <td>Valor</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Carnes</td>
+            <td>1</td>
+            <td>Carne bovina</td>
+            <td>5kg</td>
+            <td>R$ 48,00</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Carne de frango</td>
+            <td>2kg</td>
+            <td>R$ 35,87</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Bebidas</td>
+            <td>3</td>
+            <td>Cerveja</td>
+            <td>5 cx</td>
+            <td>R$ 105,45</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Vodka</td>
+            <td>2</td>
+            <td>R$ 80,6</td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <iframe src="https://sig.ifsc.edu.br/sigaa/verTelaLogin.do;jsessionid=E1CC05380007414437C4CA0E6CF4BA58.appdocker2-inst1" frameborder="0" width="100%" height="800px"></iframe>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro HTML</title>
+    <style>
+        #imagens{
+            width: 300px;
+            border-radius: 50%;
+        }
+        p{
+            color: blue;
+        }
+        h1{
+            color: red;
+        }
+        ul{
+            background-color: lightgray; padding: 20px;
+        }
+        table{
+            background-color: aquamarine;
+            border: 1px solid;
+        }
+        td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        .testeDiv{
+            display: flex;
+            flex-direction: column;
+            width: 150px;
+        }
+        #busca{
+            cursor: pointer;
+            background-color: pink;
+            font-size: 40px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="voltar">
+        <a href="./index.html"><img src="./img/voltar_invertido.jpg" alt="Voltar" width="40px"></a>
+    </div>
+    <!-- Isso é um comentário -->
+    <ul>
+        <li>git init - cria um repositorio git em um repositório</li>
+        <li>git add - adiciona modificações do workcopy worktre ao stage</li>
+        <li>git commit -m - cria um commit a partir do stage</li>
+        <li>git log - exibe os commits do nosso repositorio local</li>
+        <li>git log --oneline --all --graph</li>
+        <li>git status - exibe o estado do <strong>WK</strong></li>
+        <li>git checkout -b nova-branch  branch|hash - cria uma nova branck apontando para a branch ou hash informado</li>
+        <li>git reset --head - restaura os arquivos trakeados ao estado do HEAD</li>
+        <li>git push remote branch</li>
+        <li>git config user.name="Nome"</li>
+        <li>git config user.email="email"</li>
+        <li>git clone url - faz o clone de um repositório</li>
+    </ul>
+    
+    <p>Lorem ipsum dolor sit amet <em>consectetur</em> adipisicing elit. <strong>Corrupti</strong> consectetur consequuntur omnis quibusdam aut dicta. Ratione dolores odit pariatur officiis repellat nam quam, natus repudiandae temporibus architecto voluptatibus. Eaque, iure.</p>
+    <hr>
+    <h1>Titulo nivel 1</h1>
+    <h2>Titulo nivel 2</h2>
+    <h3>Titulo nivel 3</h3>
+    <h4>Titulo nivel 4</h4>
+    <h5>Titulo nivel 5</h5>
+    <h6>Titulo nivel 6</h6>
+    <p>Isso é um paragrafo</p>
+    <span>Isso é só um texto</span><samp> outro texto</samp>
+
+    <h1>Listas</h1>
+    <p>O Html possui listas não ordenada e listas ordenadas, a lista ordenada e não ordenadas são definas com a tag &lt; ul &gt; enquanto usamos &lt;ol&gt; 
+        para listas ordenadas
+    </p>
+    
+    <ul>
+        <li>Panqueca</li>
+        <li>Pera</li>
+        <li>Uva</li>
+        <li>Maça</li>
+    </ul>
+    
+    <ol start="5" type="">
+        <li>Panqueca</li>
+        <li>Pera</li>
+        <li>Uva</li>
+        <li>Maça</li>
+    </ol>
+
+    <dl>
+        <dt>Panqueca</dt>
+        <dt>Pera</dt>
+        <dt>Uva</dt>
+        <dt>Maça</dt>
+    </dl>
+
+    <h1>Tags formatação de texto</h1>
+    <p>Lorem ipsum <strong>dolor</strong> <sub>sit</sub> amet <sup>consectetur</sup>, adipisicing elit. 
+        Voluptas nostrum veritatis <mark>tenetur aspernatur</mark>, ducimus dignissimos 
+        eaque voluptate obcaecati possimus, voluptates delectus nesciunt, 
+        esse unde consequatur enim dicta. Voluptates, illum fuga.
+    </p>
+
+    <h1>Links e Imagens</h1>
+    <a target="_blank" href="https://www.google.com/?hl=pt_BR">Google</a>
+    <br>
+    <img id="imagens" src="./img/maça.png" alt="Maça">
+    <br>
+    <img id="imagens" src="https://conteudo.imguol.com.br/c/entretenimento/a8/2018/01/04/maca-maca-mordida-1515090198347_v2_450x450.jpg" alt="Maça mordida">
+
+    <br>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <td>Nome</td>
+            <td>Idade</td>
+            <td>Profissão</td>
+        </tr>
+        <tr>
+            <td>Arnoldo</td>
+            <td>25</td>
+            <td>Desenvolvedor</td>
+        </tr>
+        <tr>
+            <td>Joao</td>
+            <td>18</td>
+            <td>Analista</td>
+        </tr>
+        <tr>
+            <td>Marcia</td>
+            <td>27</td>
+            <td>Estagiaria</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <h1>Formulário</h1>
+    <form action="https://google.com/search">
+        <div class="testeDiv">
+            <label for="q">Query de busca</label>
+            <input type="text" name="q" id="q" value="" size="15" maxlength="15">
+        </div>
+        <br><br>
+        <div class="testeDiv">
+            <input type="text" name="p" id="q" placeholder="Informe seu nome:">
+            <input type="submit" id="busca" value="Buscar">
+        </div>
+    </form>
+
+</body>
+</html>
