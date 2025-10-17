@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!--CSS externo-->
+    <title>Aula 5 - CSS</title>
+    <style>
+        /*CSS incorporado no documento HTML*/
+        p{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="voltar">
+        <a href="./index.html"><img src="./img/voltar_invertido.jpg" alt="Voltar" width="40px"></a>
+    </div>
+
+    <p style="color: red;">Teste dos estilos do CSS</p>
+    <span>Teste de estilo com o JavaScript</span>
+
+    <h1>Formas de declarar CSS no documento HTML</h1>
+
+    <ul>
+        <li>Externo por meio da tag &lt;link rel="stylesheet" href="style.css"></li>
+        <li>Incorporando por meio da tag &lt;stryle> no cabeçalho do nosso documento</li>
+        <li>Inline - por meio do atributo style em qualquer tag HTML</li>
+        <li>** por meio da arvore DOM via JavaScript</li>
+    </ul>
+
+    <script>
+        let span=document.querySelector("span");
+        span.style.color='#FAAABB';
+    </script>
+</body>
+</html>

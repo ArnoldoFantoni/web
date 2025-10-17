@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 5.2</title>
+    <style>
+        *{
+            border: 1px solid black;
+        }
+        #traira{
+            width: 300px;
+            float: left;
+            margin-right: 25px;
+        }
+        html, body{
+            border-color: red;
+        }
+        .container{
+            position: relative;
+        }
+        .box{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+        }
+        #box2{
+            position: relative;
+            top: 30px;
+            left: 30px;
+        }
+        #box3{
+            position: absolute;
+            top: 50px;
+        }
+        #box4{
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            background-color: greenyellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="voltar">
+        <a href="./index.html"><img src="./img/voltar_invertido.jpg" alt="Voltar" width="40px"></a>
+    </div>
+    <h1>Titulo</h1>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore aspernatur nulla sed tempore nam voluptatibus, 
+        sint sequi ipsum maiores voluptates quia sunt beatae nisi similique? Impedit nemo voluptatum veniam natus.
+    </p>
+
+    <span>Especies de trairas</span>
+    <img id="traira"src="./img/tipos-de-trairas.jpg" alt="Especies de trairas">
+    <span>Traira é uma especie de peixe</span>
+    <ul>
+        <li id="Item1" class="churras">Traira lobo</li>
+        <li id="Item2" class="churras">Traira preto</li>
+        <li id="Item3" class="churras">Marobá</li>
+        <li id="Item4" class="churras">Trairão</li>
+        <li id="Item5" class="churras">Trairão amazonico</li>
+    </ul>
+
+
+    <div class="container">
+        <div id="box1" class="box">box1</div>
+        <div id="box2" class="box">box2</div>
+        <div id="box3" class="box">box3</div>
+        <div id="box4" class="box">box4</div>
+        <div id="box5" class="box">box5</div>
+    </div>
+
+</body>
+</html>

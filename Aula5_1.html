@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 5.1 - CSS</title>
+    <style>
+        /*o seletor * seleciona todas as tags do documento HTML*/
+        *{
+            border: 1px dotted black;
+        }
+        li, .churras#Item3{
+            color: black;
+        }
+        p{
+            color: red;
+        }
+        #p1{
+            padding: 20px;
+        }
+        #p2{
+            padding: 10px;
+            /*
+            border-top-color: blue;
+            border-top-style: solid;
+            border-top-width: 10px;
+            */
+            border: 5px double, blue;
+            outline: 2px dotted green;
+            outline-offset: 10px;
+        }
+        #p2, #p4{
+            color: green;
+        }
+        .churras{
+            background-color: #aaaa;
+                       color: magenta;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="voltar">
+        <a href="./index.html"><img src="./img/voltar_invertido.jpg" alt="Voltar" width="40px"></a>
+    </div>
+
+    <p id="p1">Joao Paulo</p>
+    <p id="p2">Antonio</p>
+    <p id="p3">Ana</p>
+    <p id="p4">Antonia</p>
+
+    <ul>
+        <li id="Item1" class="churras">Item 1- Alcatra</li>
+        <li id="Item2" class="churras">Item 2- Linguiça</li>
+        <li id="Item3" class="churras">Item 3- Pão de Alho</li>
+        <li id="Item4" class="churras">Item 4- Cerveja</li>
+        <li id="Item5" class="churras">Item 5- Medalhão</li>
+    </ul>
+
+</body>
+</html>
