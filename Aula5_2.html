@@ -32,12 +32,14 @@
         #box3{
             position: absolute;
             top: 50px;
+            background-color: green;
         }
         #box4{
             position: fixed;
-            right: 10px;
-            bottom: 10px;
             background-color: greenyellow;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
     </style>
@@ -47,6 +49,11 @@
         <a href="./index.html"><img src="./img/voltar_invertido.jpg" alt="Voltar" width="40px"></a>
     </div>
     <h1>Titulo</h1>
+
+    <h2>Positions HTML</h2>
+    <p>Static: não funciona top, left, right e bottom. Retrocompartibilidade. Todo elemento vem por padrão static</p>
+    <p>Display none, inline(secomporta como texto), block e inline-block</p>
+    <p>Position: absolute - se positiona ao primeiro ancestral não estaticos</p>
 
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore aspernatur nulla sed tempore nam voluptatibus, 
         sint sequi ipsum maiores voluptates quia sunt beatae nisi similique? Impedit nemo voluptatum veniam natus.
