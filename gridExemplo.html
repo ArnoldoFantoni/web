@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GridExemplo</title>
+
+    <style>
+        .container{
+            height: 100vh;
+            width: 100vw;
+            color: white;
+            font-size: 30px;
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            display: grid;
+            grid-template-areas: 
+            "header header header header"
+            "main main . silderbar"
+            "fooder fooder fooder fooder";
+        }
+        @media screen and (max-width: 600px) {
+            .container{
+                grid-template-areas: 
+                "header"
+                "main"
+                "silderbar"
+                "fooder";
+            }            
+        }
+        @media screen and (min-width: 601px) and (max-width: 800px){
+            .container{
+                grid-template-areas: 
+                "header header"
+                "main silderbar"
+                "fooder fooder";
+            }            
+        }
+        /* .container{
+            height: 100vh;
+            width: 100vw;
+            color: white;
+            font-size: 30px;
+            border-radius: 10px;
+            display: grid;
+            grid-template-areas: 
+            "header header header header"
+            "main main . silderbar"
+            "fooder fooder fooder fooder";
+        } */
+        #header{
+            border: 3px solid black;
+            grid-area: header;
+            background-color: orange;
+            border-radius: 10px;
+            text-align: center;
+        }
+        #main{
+            border: 3px solid black;
+            grid-area: main;
+            background-color: blue;
+            border-radius: 10px;
+            text-align: center;
+        }
+        #silderbar{
+            border: 3px solid black;
+            grid-area: silderbar;
+            background-color: red;
+            border-radius: 10px;
+            text-align: center;
+        }
+        #fooder{
+            border: 3px solid black;
+            grid-area: fooder;
+            background-color: green;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="voltar">
+        <a href="./Aula7_2.html"><img src="./img/voltar_invertido.jpg" alt="Voltar" width="40px"></a>
+    </div>
+
+    <h1>Grid Exemplo</h1>
+
+    <div class="container">
+        <div class="item" id="header">Cabeçalho</div>
+        <div class="item" id="main">Main</div>
+        <div class="item" id="silderbar">Sider bar</div>
+        <div class="item" id="fooder">Fooder</div>
+    </div>
+    
+</body>
+</html>
