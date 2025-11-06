@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3 Bandeiras</title>
+    <style>
+        .bandeiras{
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+        }
+        #bandeiraFranca{
+            display: flex;
+            flex-direction: row;
+            margin: 10px;
+            height: 170px;
+        }
+        #francaCor1{
+            background-color: blue;
+            width: 100px;
+        }
+        #francaCor2{
+            background-color: white;
+            width: 100px;
+        }
+        #francaCor3{
+            background-color: red;
+            width: 100px;
+        }
+
+        #bandeiraAlemanha{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            width: 300px;
+        }
+        #alemanhaCor1{
+            background-color: black;
+            height: 60px;
+        }
+        #alemanhaCor2{
+            background-color: red;
+            height: 60px;
+        }
+        #alemanhaCor3{
+            background-color: yellow;
+            height: 60px;
+        }
+
+        #bandeiraJapao{
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+        #japaoCor1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border: 1px solid black;
+            height: 200px;
+            width: 250px;
+        }
+        #japaoCor2{
+            background-color: red;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bandeiras</h1>
+    <div class="bandeiras">
+        <span>França</span>
+        <div id="bandeiraFranca">
+            <div id="francaCor1"></div>
+            <div id="francaCor2"></div>
+            <div id="francaCor3"></div>
+        </div>
+        <span>Alemanha</span>
+        <div id="bandeiraAlemanha">
+            <div id="alemanhaCor1"></div>
+            <div id="alemanhaCor2"></div>
+            <div id="alemanhaCor3"></div>
+        </div>
+        <span>Japão</span>
+        <div id="bandeiraJapao">
+            <div id="japaoCor1">
+                <div id="japaoCor2"></div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
