@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+    <style>
+        span{
+            color: blue;
+            font-size: 18px;
+        }
+        button:hover{
+            background-color: black;
+            color: white;
+        }
+        input::before{
+            background-color: green;
+        }
+
+        #textoMovendo{
+            font-size: 50px;
+            animation: rotacao 2s linear infinite;
+        }
+        @keyframes rotacao {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>O que é um regra CSS ?</h1>
+    <p>Uma regra CSS é um conjunto de instruções que define como os elementos HTML devem ser exibidos na tela.</p>
+    <p>Ela é composta por um seletor, uma propriedade e um valor.</p>
+    <p>Exemplo: </p>
+    <p>seletor { </p>
+    <p>  propriedade: valor; </p>
+    <p>} </p>
+    <p>Nesse texto estamos utilizando a regra abaixo.</p>
+    <p>span{</p>
+    <p>  color: blue;</p>
+    <p>  font-size: 18px;</p>
+    <p>}</p>
+    <span><strong>Isso é uma tag span </strong>O seletor p aplica as propriedades color: blue; e font-size: 18px; a todos os parágrafos da página.</span>
+
+    <p>Botão com pseudoclasse</p>
+    <button>PSEUDOCLASSE</button>
+    
+    <label for="input">Pseudoelemento</label>
+    <input for="input" type="text">
+
+    <br>
+    <p id="textoMovendo">texto se movendo</p>
+
+</body>
+</html>
