@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicio 5a</title>
+    <title>Exercicio 5b</title>
     <style>
         .container{
             border: 2px solid rgba(0, 0, 0, 0.418);
@@ -17,6 +17,31 @@
             "item4 item2 item6 item8 "
             "item4 item2 item6 item9 "
             "item5 item5 item6 item10 ";
+        }
+        @media screen and (max-width: 600px) {
+            .container{
+                grid-template-areas: 
+                "item1"
+                "item2"
+                "item3"
+                "item4"
+                "item5"
+                "item6"
+                "item7"
+                "item8"
+                "item9"
+                "item10";
+            }            
+        }
+        @media screen and (min-width: 601px) and (max-width: 800px){
+            .container{
+                grid-template-areas: 
+                "item1 item2 item3 item3 "
+                "item1 item2 item6 item7 "
+                "item4 item2 item6 item8 "
+                "item4 item2 item6 item9 "
+                "item5 item5 item6 item10 ";
+            }            
         }
         .item1{
             background-color: orange;
