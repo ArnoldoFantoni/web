@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script 4</title>
+</head>
+<body>
+    <div>
+        <label style="margin-left: 11px;" for="peso">Peso</label>
+        <input id="peso" type="text">
+        <br>
+        <label for="altura">Altura</label>
+        <input id="altura" type="text">
+        <button>Calcular IMC</button>
+    </div>
+    <div id="resultado">
+
+    </div>
+</body>
+<script>
+    let peso = document.querySelector("#peso")
+    let altura = document.querySelector("#altura")
+    
+    b = document.querySelector("button")
+    b.addEventListener("click", ()=>{
+        let pesoConvertido = Number.parseFloat(peso.value)
+        let alturaConvertido = Number.parseFloat(altura.value)
+
+        imc = pesoConvertido / (alturaConvertido**alturaConvertido)
+        console.log("IMC: ", imc)
+
+        let resultado = document.getElementById("resultado")
+        resultado.innerHTML=`<p>IMC= ${imc}</p>`
+    })
+</script>
+</html>

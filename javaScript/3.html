@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script 3</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // let body = document.body
+    // body.innerHTML = `<button>click aqui</button>`
+    
+    let contador = 0;
+    b = document.createElement("button")
+    b.innerHTML="click em mim"
+
+    document.body.appendChild(b)
+    p = document.createElement("p")
+    p.id="texto"
+    document.body.appendChild(p)
+
+    b.addEventListener("click", ()=>{
+        contador ++
+        p.innerHTML = contador
+    })
+</script>
+</html>
