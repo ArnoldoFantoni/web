@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula Java Script 10</title>
+</head>
+<style>
+    #formulario{
+        display: flex;
+        flex-direction: column;
+    }
+    #listagem{
+        background-color: aquamarine;
+        border: 1px solid black;
+    }
+
+</style>
+<body>
+    <button id="limpar">Limpar o localStorage</button>
+    <div id="formulario">
+        <label for="id">Id</label>
+        <input type="text" name="id" id="id" readonly> 
+        
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome">
+        
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+        
+        <button id="botaoSalvar">Cadastrar</button>
+    </div>
+
+    <br>
+    <div id="listagem"></div>
+
+</body>
+<script>
+    let inputId = document.querySelector("#id")
+    let inputNome = document.querySelector("#nome")
+    let inputEmail = document.querySelector("#email")
+
+    let button = document.querySelector("#botaoSalvar")
+    let buttonLimpar = document.querySelector("#limpar")
+    // var listaNomes = [];
+
+    buttonLimpar.addEventListener("click", ()=>{
+        localStorage.clear();
+    })
+    if(localStorage.getItem("listaNomes")){
+        listaNomes = JSON.parse(localStorage.getItem("listaNomes"))
+    }else{
+        listaNomes = []
+    }
+
+    let listagem = document.querySelector("#listagem")
+    
+    button.addEventListener("click", ()=>{
+        let maxid = listaNomes.length
+        listaNomes.push({
+            "id"    : maxid + 1,
+            "nome"  : inputNome.value,
+            "email" : inputEmail.value
+        })
+        console.log("Lista Nomes: ", listaNomes);
+        listagemPessoas()
+
+        // console.log(JSON.stringify(listaNomes))
+        localStorage.setItem("listaNomes", JSON.stringify(listaNomes));
+    })
+    
+    function listagemPessoas(){
+        listagem.innerHTML = "";
+        listaNomes.forEach((e)=>{
+            var item = `<div class="itemLista">
+                <input type="text" class="id" value=${e.id}>
+                <input type="text" class="nome" value=${e.nome}>
+                <input type="text" class="email" value=${e.email}>
+                </div>`
+
+                listagem.innerHTML+=item
+            })
+    }
+
+
+
+</script>
+</html>

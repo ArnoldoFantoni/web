@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Filmes</title>
+</head>
+<body>
+    <h2>Busca de filmes</h2>
+
+    <label for="titulo">Titulo</label>
+    <input type="text" name="titulo" id="titulo">
+    <button id="busca">Buscar</button>
+
+    <div id="filmes"></div>
+
+    
+
+</body>
+<script>
+    let inputFilme = document.querySelector("#titulo")
+    let divResultado = document.querySelector("#filmes")
+    let buttonBuscar = document.querySelector("#busca")
+
+    buttonBuscar.addEventListener("click", ()=>{
+        fetch("https://www.omdbapi.com/?s="+inputFilme.value+"&apikey=f77bfada").then((response)=>{
+            return response.json()
+        }).then((data)=>{
+            console.log("data", data)
+            divResultado.innerHTML = ""
+            
+            data.Search.forEach((filme)=>{
+                let divFilme =
+                `<div class="filme">
+                    <img src="${filme.Poster}" alt="${filme.Title}" class="imgPoster">
+                    <p class="filmeTitulo">${filme.Title}</p>
+                    <p class="filmeAno">${filme.Year}</p>
+                </div>`
+
+                divResultado.innerHTML += divFilme;
+            })
+        })
+    })
+</script>
+</html>
