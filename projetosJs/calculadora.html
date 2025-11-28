@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: wrap;
+            height: 100vh;
+        }
+        #calculadora{
+            height: 317px;
+            width: 320px;
+            padding: 5px;
+            border-radius: 10px;
+            border: 1px solid gray;
+            display: flex;
+            flex-direction: column;
+            background-color: black;
+        }
+        #corpo_calculadora{
+            padding: 3px;
+        }
+        #visor{
+            margin-left: 7px;
+            height: 35px;
+        }
+        #operacao{
+            width: 94%;
+            height: 94%;
+            font-size: 15px;
+        }
+        #teclas{
+            padding: 6px;
+            height: 85%;
+            display: grid;
+            grid-template-areas:
+            "soma subtracao multiplicacao divisao"
+            "sete oito nove igual"
+            "quatro cinco seis igual"
+            "um dois tres igual"
+            "zero ponto c igual";
+        }
+        #soma { grid-area: soma; }
+        #subtracao { grid-area: subtracao; }
+        #multiplicacao { grid-area: multiplicacao; }
+        #divisao { grid-area: divisao; }
+        #sete { grid-area: sete; }
+        #oito { grid-area: oito; }
+        #nove { grid-area: nove; }
+        #quatro { grid-area: quatro; }
+        #cinco { grid-area: cinco; }
+        #seis { grid-area: seis; }
+        #um { grid-area: um; }
+        #dois { grid-area: dois; }
+        #tres { grid-area: tres; }
+        #zero { grid-area: zero; }
+        #ponto { grid-area: ponto; }
+        #c { grid-area: c; }
+        #igual { 
+            grid-area: igual;
+        }
+        #igual button{
+            background-color: rgb(79, 79, 252);
+            color: white;
+            height: 98%;
+        }
+        button{
+            background-color: white;
+            color: black;
+            width: 70px;
+            height: 50px;
+            margin: 2px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculadora">
+        <div id="corpo_calculadora">
+            <div id="visor">
+                <input type="text" id="operacao">
+            </div>
+            <div id="teclas">
+                <div class="teclas_calculadora" id="soma"><button onclick="adicionaValores('+')">+</button></div>
+                <div class="teclas_calculadora" id="subtracao"><button onclick="adicionaValores('-')">-</button></div>
+                <div class="teclas_calculadora" id="multiplicacao"><button onclick="adicionaValores('*')">x</button></div>
+                <div class="teclas_calculadora" id="divisao"><button onclick="adicionaValores('/')">/</button></div>
+                <div class="teclas_calculadora" id="sete"><button onclick="adicionaValores('7')">7</button></div>
+                <div class="teclas_calculadora" id="oito"><button onclick="adicionaValores('8')">8</button></div>
+                <div class="teclas_calculadora" id="nove"><button onclick="adicionaValores('9')">9</button></div>
+                <div class="teclas_calculadora" id="quatro"><button onclick="adicionaValores('4')">4</button></div>
+                <div class="teclas_calculadora" id="cinco"><button onclick="adicionaValores('5')">5</button></div>
+                <div class="teclas_calculadora" id="seis"><button onclick="adicionaValores('6')">6</button></div>
+                <div class="teclas_calculadora" id="um"><button onclick="adicionaValores('1')">1</button></div>
+                <div class="teclas_calculadora" id="dois"><button onclick="adicionaValores('2')">2</button></div>
+                <div class="teclas_calculadora" id="tres"><button onclick="adicionaValores('3')">3</button></div>
+                <div class="teclas_calculadora" id="zero"><button onclick="adicionaValores('0')">0</button></div>
+                <div class="teclas_calculadora" id="ponto"><button onclick="adicionaValores('.')">.</button></div>
+                <div class="teclas_calculadora" id="c"><button onclick="limpaVisor()">C</button></div>
+                <div class="teclas_calculadora" id="igual"><button  onclick="calcular()">=</button></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function adicionaValores(valor){
+        let operacao = document.getElementById("operacao")
+        operacao.value += valor
+    }
+
+    function limpaVisor(){
+        let operacao = document.getElementById("operacao")
+        operacao.value = "";
+    }
+
+    function calcular(){
+        let operacao = document.getElementById("operacao")
+        console.log(operacao.value)
+        let resultado = eval(operacao.value)
+        console.log(resultado)
+
+        operacao.value = resultado
+    }
+</script>
+</html>
