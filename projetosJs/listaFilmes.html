@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Filmes</title>
+</head>
+<style>
+    body{
+        width: 100%;
+        margin: 0;
+    }
+    #navBar{
+        background-color: grey;
+        height: 40px;
+        display: flex;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        justify-content: center;
+    }
+    #nav_campos{
+        /* margin-top: 5px; */
+        padding: 5px;
+    }
+    #titulo{
+        height: 20px;
+        width: 500px;
+    }
+    #busca{
+        height: 25px;
+        border-radius: 5px;
+        margin-left: 15px;
+        color: white;
+        background-color: black;
+    }
+    #filmes{
+        background-color: rgb(29, 29, 29);
+        width: 100%;
+        height: calc(100vh - 40px);
+        margin-top: 40px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        overflow: auto;
+    }
+    
+</style>
+<body>
+    <nav id="navBar">
+         <div id="nav_campos">
+             <input type="text" name="titulo" id="titulo" placeholder="digite para buscar ...">
+             <button id="busca">Buscar</button>
+         </div>
+    </nav>
+
+    <div id="filmes"></div>
+
+</body>
+<script>
+    let inputFilme = document.querySelector("#titulo")
+    let divResultado = document.querySelector("#filmes")
+    let buttonBuscar = document.querySelector("#busca")
+
+    buttonBuscar.addEventListener("click", ()=>{
+        fetch("https://www.omdbapi.com/?s="+inputFilme.value+"&apikey=f77bfada").then((response)=>{
+            return response.json()
+        }).then((data)=>{
+            console.log("data", data)
+            divResultado.innerHTML = ""
+            
+            data.Search.forEach((filme)=>{
+                let divFilme =
+                `<div class="filmeAPI" style="padding: 20px;">
+                    <img src="${filme.Poster}" alt="${filme.Title}" class="imgPoster">
+                    <p class="filmeTitulo" style="color:white">${filme.Title} - ${filme.Year}</p>
+                </div>`
+
+                divResultado.innerHTML += divFilme;
+            })
+        })
+    })
+</script>
+</html>

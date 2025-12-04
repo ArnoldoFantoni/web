@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Bloco de Notas JS</title>
+<style>
+    body {
+        font-family: Arial;
+        display: flex;
+        height: 100vh;
+        margin: 0;
+    }
+
+    /* Lista */
+    #listaNotas {
+        width: 20%;
+        background: #cfcfcf;
+        padding: 10px;
+        border-right: 2px solid #ddd;
+        overflow-y: auto;
+    }
+
+    .notaItem {
+        padding: 10px;
+        background: white;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    .notaItem:hover {
+        background: #eee;
+    }
+
+    /* Área da edição */
+    #editor {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        padding: 20px;
+    }
+
+    textarea {
+        width: 100%;
+        height: 80%;
+        margin-top: 10px;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    button {
+        margin-right: 10px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    #topButtons {
+        margin-bottom: 10px;
+    }
+
+    #salvar{
+        background-color: rgb(126, 224, 126);
+    }
+    
+    #excluir{
+        background-color: rgb(248, 89, 89);
+    }
+    #notas{
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div id="listaNotas">
+    <h2>Minhas Notas</h2>
+    <button onclick="novaNota()">Nova Nota</button>
+    <div id="notas"></div>
+</div>
+
+<div id="editor">
+    <h2 id="tituloEditor">Nenhuma nota selecionada</h2>
+
+    <div id="topButtons">
+        <button id="salvar" onclick="salvarNota()">Salvar</button>
+        <button id="excluir" onclick="excluirNota()">Excluir</button>
+    </div>
+
+    <textarea id="conteudoNota" placeholder="Digite sua nota aqui..." disabled></textarea>
+</div>
+
+<script>
+// -------------------- MODEL --------------------
+class Nota {
+    constructor(id, texto) {
+        this.id = id;
+        this.texto = texto;
+    }
+}
+
+let notas = [];
+let notaAtual = null;
+
+// -------------------- STORAGE --------------------
+function carregarNotas() {
+    const data = localStorage.getItem("notasJS");
+    notas = data ? JSON.parse(data) : [];
+}
+
+function salvarStorage() {
+    localStorage.setItem("notasJS", JSON.stringify(notas));
+}
+
+// -------------------- LISTAGEM --------------------
+function listarNotas() {
+    const div = document.getElementById("notas");
+    div.innerHTML = "";
+
+    notas.forEach(n => {
+        const item = document.createElement("div");
+        item.className = "notaItem";
+        item.innerText = n.texto.substring(0, 30) + "...";
+        item.style = "border-radius: 10px;";
+        item.onclick = () => abrirNota(n.id);
+        div.appendChild(item);
+    });
+}
+
+// -------------------- CRIAR --------------------
+function novaNota() {
+    notaAtual = new Nota(Date.now(), "");
+    document.getElementById("conteudoNota").disabled = false;
+    document.getElementById("conteudoNota").value = "";
+    document.getElementById("tituloEditor").innerText = "Nova Nota";
+}
+
+// -------------------- ABRIR --------------------
+function abrirNota(id) {
+    notaAtual = notas.find(n => n.id === id);
+    document.getElementById("conteudoNota").disabled = false;
+    document.getElementById("conteudoNota").value = notaAtual.texto;
+    document.getElementById("tituloEditor").innerText = "Editando Nota";
+}
+
+// -------------------- SALVAR --------------------
+function salvarNota() {
+    if (!notaAtual) {
+        alert("Nenhuma nota selecionada.");
+        return;
+    }
+
+    notaAtual.texto = document.getElementById("conteudoNota").value;
+
+    // se for nova, adiciona
+    const index = notas.findIndex(n => n.id === notaAtual.id);
+    if (index === -1) notas.push(notaAtual);
+
+    salvarStorage();
+    listarNotas();
+    alert("Nota salva com sucesso!");
+}
+
+// -------------------- EXCLUIR --------------------
+function excluirNota() {
+    if (!notaAtual) {
+        alert("Nenhuma nota aberta.");
+        return;
+    }
+
+    const confirmar = confirm("Deseja realmente excluir esta nota?");
+    if (!confirmar) return;
+
+    notas = notas.filter(n => n.id !== notaAtual.id);
+    salvarStorage();
+    listarNotas();
+
+    notaAtual = null;
+    document.getElementById("conteudoNota").value = "";
+    document.getElementById("conteudoNota").disabled = true;
+    document.getElementById("tituloEditor").innerText = "Nenhuma nota selecionada";
+}
+
+// -------------------- INICIALIZAÇÃO --------------------
+carregarNotas();
+listarNotas();
+</script>
+
+</body>
+</html>
